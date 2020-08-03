@@ -1,4 +1,5 @@
 .cache
-dist
+dist/*
+!dist/projects
 node_modules
 *.log
