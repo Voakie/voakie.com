@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>New Countdown</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="OBS Countdown" />
+    <meta
+      name="description"
+      content="Customisable Web countdown. No installation required, simple and lightweight."
+    />
+    <meta
+      name="keywords"
+      content="obs,open,broadcaster,suite,studio,obss,web,countdown,easy,fast,xsplit,x-split,x,split"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://voakie.com/favicon/insert.js"></script>
+    <script src="new.js"></script>
+    <link rel="stylesheet" href="new.css" />
+  </head>
+  <body>
+    <h1>New Countdown</h1>
+    <br />
+    <div class="note">
+      Instructions:
+      <a href="https://obsproject.com/forum/resources/stream-countdown.469/" target="_blank">OBS</a>
+      | <a href="manual/xsplit.html" target="_blank">Xsplit</a>
+    </div>
+
+    <div class="container">
+      <div class="block">
+        <p class="top">Time and Date</p>
+        <input class="time" />
+        <p class="bottom">Example: 2020 12 01 18 00 (Year Month Day Hour Minute).</p>
+      </div>
+
+      <div class="block">
+        <p class="top">Time display</p>
+        <select class="td">
+          <option value="0">Absolute and relative</option>
+          <option value="1">Absolute (e.g. Starting at 10pm)</option>
+          <option value="2">Relative (e.g. Starting in 10 minutes)</option>
+        </select>
+      </div>
+
+      <div class="block">
+        <p class="top">Text color</p>
+        <select class="theme">
+          <option value="1">White</option>
+          <option value="2">Black</option>
+          <option value="3">Green</option>
+        </select>
+      </div>
+
+      <div class="block">
+        <p class="top">Background link <span class="opt">(optional)</span></p>
+        <input class="bg" type="url" />
+        <p class="bottom">Should fit your stream resolution. Type <i>green</i> to make it green.</p>
+      </div>
+
+      <div class="block">
+        <p class="top">Language <span class="opt">(optional)</span></p>
+        <input class="language" />
+        <div class="bottom">
+          Leave blank and it will be automatically determined.
+          <a
+            href="https://www.sitepoint.com/web-foundations/iso-2-letter-language-codes/"
+            target="_blank"
+            >Find codes here.</a
+          >
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="top">Text <span class="opt">(optional)</span></p>
+        <input class="text" />
+        <div class="bottom">Will default to <i>The stream will start in</i>.</div>
+      </div>
+    </div>
+    <button class="send">Create</button>
+  </body>
+</html>

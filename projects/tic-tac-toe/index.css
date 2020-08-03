@@ -1,0 +1,159 @@
+﻿* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    background-color: #eeeeee;
+}
+
+.game {
+    width: 306px;
+    height: 306px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.sqr {
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 100px;
+    width: 100px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.sqr:hover {
+    background-color: rgba(255, 165, 0, 0.24);
+}
+
+.no {
+    cursor: default;
+}
+
+.no:hover {
+    background-color: rgba(255, 0, 0, 0.24);
+}
+
+/**/
+
+.o {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 5px solid black;
+    padding: 0px;
+    transition: border .2s;
+}
+
+.o.inv {
+    border: 0px solid black;
+}
+
+.x {
+    margin-top: 20px;
+    margin-left: 20px;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    transform: rotate(45deg);
+}
+
+.x div {
+    background-color: black;
+}
+
+.x .x1 {
+    position: absolute;
+    width: 60px;
+    height: 5px;
+    margin-top: 27.5px;
+    margin-left: 0;
+    transition: width .2s, margin-left .2s;
+}
+
+.x .x2 {
+    position: absolute;
+    height: 60px;
+    width: 5px;
+    margin-left: 27.5px;
+    margin-top: 0;
+    transition: height .2s, margin-top .2s;
+}
+
+.x.inv .x1 {
+    width: 0;
+    margin-left: 30px;
+}
+
+.x.inv .x2 {
+    height: 0;
+    margin-top: 30px;
+}
+
+/**/
+
+h1 {
+    text-align: center;
+    font-family: Arial;
+    font-size: 50px;
+}
+
+.won .x .x1, .won .x .x2 {
+    animation: wonx infinite 2s;
+}
+
+.won .o {
+    animation: wono infinite 2s;
+}
+
+@-moz-keyframes wonx {
+    50% {
+        background-color: green;
+    }
+}
+
+@-webkit-keyframes wonx {
+    50% {
+        background-color: green;
+    }
+}
+
+@keyframes wonx {
+    50% {
+        background-color: green;
+    }
+}
+
+@-moz-keyframes wono {
+    50% {
+        border: 5px solid green;
+    }
+}
+
+@-webkit-keyframes wono {
+    50% {
+        border: 5px solid green;
+    }
+}
+
+@keyframes wono {
+    50% {
+        border: 5px solid green;
+    }
+}
