@@ -2,13 +2,14 @@ import styled from "@emotion/styled"
 
 export const SelectionWrapper = styled.div`
   position: fixed;
-  bottom: -200px;
+  bottom: 10vh;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-around;
   max-width: 1500px;
   margin: auto;
+  transform: translateY(400px);
 `
 
 export const OptionWrapper = styled.div`
