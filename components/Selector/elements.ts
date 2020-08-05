@@ -13,7 +13,7 @@ export const SelectionWrapper = styled.div`
 
 export const OptionWrapper = styled.div`
   width: 300px;
-  height: 150px;
+  min-height: 150px;
   border: 1px solid #313131;
   border-radius: 5px;
   outline: 0px solid white;
@@ -56,6 +56,12 @@ export const OptionWrapper = styled.div`
       outline-width: 0px;
     }
   }
+
+  @media screen and (max-height: 400px) {
+    width: 200px;
+    min-height: 100px;
+    font-size: 12px;
+  }
 `
 
 export const OptionHeading = styled.div`
@@ -66,5 +72,9 @@ export const OptionHeading = styled.div`
 
   .dark & {
     color: #eaeaea;
+  }
+
+  @media screen and (max-height: 400px) {
+    font-size: 16px;
   }
 `

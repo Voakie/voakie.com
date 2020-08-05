@@ -68,7 +68,7 @@ export class Projects extends React.Component<Props> {
           />
         </ProjectWrapper>
         <PressPls stage={2} displayOn={2} onClick={this.onPressClick.bind(this)}>
-          PRESS ESCAPE
+          BACK
         </PressPls>
       </React.Fragment>
     )

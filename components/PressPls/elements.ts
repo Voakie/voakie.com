@@ -9,6 +9,10 @@ export const Wrap = styled.div`
   justify-content: center;
   align-items: flex-start;
   height: 20vh;
+
+  @media screen and (max-width: 820px) {
+    height: 15vh;
+  }
 `
 
 export const Text = styled.div`

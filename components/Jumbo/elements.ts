@@ -14,4 +14,19 @@ export const JumboEl = styled.div`
   .dark & {
     color: #d0d0d0;
   }
+
+  @media screen and (max-width: 900px) {
+    letter-spacing: 30px;
+    font-size: 150px;
+  }
+
+  @media screen and (max-width: 630px) {
+    letter-spacing: 20px;
+    font-size: 50px;
+  }
+
+  @media screen and (max-height: 550px) {
+    letter-spacing: 20px;
+    font-size: 50px;
+  }
 `
