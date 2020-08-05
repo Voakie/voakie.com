@@ -102,7 +102,7 @@ export class About extends React.Component<AboutProps, AboutState> {
 
         {this.state.displayPressPls ? (
           <PressPls stage={2} displayOn={2} onClick={this.onPressClick}>
-            PRESS ESCAPE
+            BACK
           </PressPls>
         ) : null}
       </React.Fragment>
@@ -143,7 +143,7 @@ export class ImageReveal extends React.Component<ImageRevealProps, ImageRevealSt
   render() {
     return (
       <RevealableImage className={this.state.reveal ? "reveal" : ""}>
-        <img width="300" height="300" src={this.props.src} />
+        <img style={{ height: "100%", width: "100%" }} src={this.props.src} />
       </RevealableImage>
     )
   }

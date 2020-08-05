@@ -10,6 +10,11 @@ export const ProjectWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  overflow: auto;
+
+  @media screen and (max-width: 820px) {
+    bottom: 20vh;
+  }
 `
 
 export const ProjectEl = styled.div`
@@ -40,6 +45,10 @@ export const ProjectEl = styled.div`
 
   &:hover svg {
     opacity: 1;
+  }
+
+  @media screen and (max-width: 820px) {
+    transform: unset !important;
   }
 `
 

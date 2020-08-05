@@ -40,6 +40,15 @@ export const RevealableImage = styled.div`
       background: transparent;
     }
   }
+
+  @media screen and (max-height: 650px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media screen and (max-height: 400px) {
+    display: none;
+  }
 `
 
 export const RevealableText = styled.div`
@@ -91,5 +100,10 @@ export const RevealableText = styled.div`
       background: white;
       color: black;
     }
+  }
+
+  @media screen and (max-height: 650px) {
+    font-size: 18px;
+    padding: 0;
   }
 `

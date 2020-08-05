@@ -26,4 +26,12 @@ export const Container = styled.div`
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+
+  @media screen and (max-height: 400px) {
+    display: none;
+  }
 `

@@ -67,7 +67,7 @@ export default class Voakie extends React.Component<{}, State> {
 
     anime({
       targets: ".selectionwrap",
-      translateY: -250,
+      translateY: [400, 0],
       duration: 1000,
     })
 
@@ -98,8 +98,8 @@ export default class Voakie extends React.Component<{}, State> {
     anime({
       targets: "canvas",
       translateY: "100vh",
-      duration: 10,
-      easing: "cubicBezier(0.670, 0.200, 0.395, 1.035)",
+      duration: 100,
+      easing: "linear",
     })
 
     document.querySelector("body")?.classList.remove("dark")
@@ -132,14 +132,14 @@ export default class Voakie extends React.Component<{}, State> {
 
     anime({
       targets: [".jumbo"],
-      translateY: "0vh",
+      translateY: 0,
       duration: 1000,
       easing: "cubicBezier(0.670, 0.200, 0.395, 1.035)",
     })
 
     anime({
       targets: [".selectionwrap"],
-      translateY: "-250px",
+      translateY: ["400px", "0px"],
       duration: 1000,
     })
 
