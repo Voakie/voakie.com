@@ -81,7 +81,7 @@ export class Stars extends React.Component<Props, State> {
   }
 
   orientationChange(e: DeviceOrientationEvent) {
-    this.mouseX = (e.alpha || 0) * 10
+    this.mouseX = ((e.gamma || 0) + (e.alpha || 0)) * 10
     this.mouseY = (e.beta || 0) * 10
   }
 
