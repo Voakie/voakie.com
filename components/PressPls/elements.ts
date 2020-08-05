@@ -24,9 +24,10 @@ export const Text = styled.div`
   padding: 10px;
   animation: enteranim 2s infinite;
   cursor: pointer;
+  background: white;
 
   &:hover {
-    background: rgba(200, 200, 200, 0.5);
+    background: rgb(239 239 239);
   }
 
   @keyframes enteranim {

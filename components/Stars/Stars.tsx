@@ -30,6 +30,7 @@ export class Stars extends React.Component<Props, State> {
     }
 
     this.mouseMove = this.mouseMove.bind(this)
+    this.orientationChange = this.orientationChange.bind(this)
   }
 
   componentDidMount() {
@@ -64,17 +65,24 @@ export class Stars extends React.Component<Props, State> {
     }
 
     document.addEventListener("mousemove", this.mouseMove)
+    window.addEventListener("deviceorientation", this.orientationChange, true)
     this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousemove", this.mouseMove)
+    window.removeEventListener("deviceorientation", this.orientationChange, true)
     this.animate = false
   }
 
   mouseMove(e: MouseEvent) {
     this.mouseX = e.clientX
     this.mouseY = e.clientY
+  }
+
+  orientationChange(e: DeviceOrientationEvent) {
+    this.mouseX = (e.alpha || 0) * 10
+    this.mouseY = (e.beta || 0) * 10
   }
 
   render() {
