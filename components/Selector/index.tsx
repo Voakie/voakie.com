@@ -2,7 +2,7 @@ import { SelectionWrapper } from "./elements"
 import { Option } from "./Option"
 import anime from "animejs"
 import * as React from "react"
-import { FloatingArrow } from "@component/FloatingArrow/FloatingArrow"
+import { FloatingArrow } from "@component/FloatingArrow"
 
 interface Props {
   stage: number
@@ -75,7 +75,7 @@ export class Selector extends React.Component<Props, State> {
       if (e.which === 37 && this.state.selection > 0) {
         if (!this.state.allowSelection) return
         this.setState({ selection: this.state.selection - 1 })
-      } else if (e.which === 39 && this.state.selection < 1) {
+      } else if (e.which === 39 && this.state.selection < 2) {
         if (!this.state.allowSelection) return
         this.setState({ selection: this.state.selection + 1 })
       } else if (e.which === 13) {
@@ -112,8 +112,8 @@ export class Selector extends React.Component<Props, State> {
             onSelectDone={this.props.onSelectDone}
           />
           <Option
-            title="About"
-            body="How to reach me and how this site was made"
+            title="Guestbook"
+            body="Sign the guestbook"
             selection={this.state.selection}
             setSelection={this.setSelection}
             number={1}
@@ -122,9 +122,9 @@ export class Selector extends React.Component<Props, State> {
             locked={this.props.stage !== 1}
             onSelectDone={this.props.onSelectDone}
           />
-          {/*<Option
-            title="Survey"
-            body="Answer a couple of questions"
+          <Option
+            title="About"
+            body="How to reach me and how this site was made"
             selection={this.state.selection}
             setSelection={this.setSelection}
             number={2}
@@ -133,17 +133,6 @@ export class Selector extends React.Component<Props, State> {
             locked={this.props.stage !== 1}
             onSelectDone={this.props.onSelectDone}
           />
-          <Option
-            title="Underground"
-            body="Don't open this one"
-            selection={this.state.selection}
-            setSelection={this.setSelection}
-            number={3}
-            setArrowPos={this.setArrowPos}
-            nonce={this.state.nonce}
-            locked={this.props.stage !== 1}
-            onSelectDone={this.props.onSelectDone}
-          />*/}
         </SelectionWrapper>
       </React.Fragment>
     )

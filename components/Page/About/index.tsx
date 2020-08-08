@@ -1,6 +1,8 @@
 import * as React from "react"
-import { AboutWrap, RevealableImage, RevealableText } from "./aboutElements"
-import { PressPls } from "@component/PressPls/PressPls"
+import { AboutWrap } from "./elements"
+import { PressPls } from "@component/PressPls"
+import { TextReveal } from "@component/Reveal/Text"
+import { ImageReveal } from "@component/Reveal/Image"
 
 interface AboutProps {
   back: () => void
@@ -107,89 +109,5 @@ export class About extends React.Component<AboutProps, AboutState> {
         ) : null}
       </React.Fragment>
     )
-  }
-}
-
-interface ImageRevealProps {
-  src: string
-  delay: number
-}
-
-interface ImageRevealState {
-  reveal: boolean
-}
-
-export class ImageReveal extends React.Component<ImageRevealProps, ImageRevealState> {
-  timeout?: number
-
-  constructor(props: ImageRevealProps) {
-    super(props)
-
-    this.state = {
-      reveal: false,
-    }
-  }
-
-  componentDidMount() {
-    this.timeout = window.setTimeout(() => {
-      this.setState({ reveal: true })
-    }, this.props.delay)
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timeout)
-  }
-
-  render() {
-    return (
-      <RevealableImage className={this.state.reveal ? "reveal" : ""}>
-        <img style={{ height: "100%", width: "100%" }} src={this.props.src} />
-      </RevealableImage>
-    )
-  }
-}
-
-interface TextRevealProps {
-  size: "normal" | "large"
-  delay: number
-}
-
-export class TextReveal extends React.Component<TextRevealProps, ImageRevealState> {
-  timeout?: number
-
-  constructor(props: TextRevealProps) {
-    super(props)
-
-    this.state = {
-      reveal: false,
-    }
-  }
-
-  componentDidMount() {
-    this.timeout = window.setTimeout(() => {
-      this.setState({ reveal: true })
-    }, this.props.delay)
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timeout)
-  }
-
-  get classes() {
-    let s = ""
-
-    if (this.state.reveal) {
-      s += " reveal "
-    }
-
-    if (this.props.size === "large") {
-      s += " large "
-    }
-
-    return s
-  }
-
-  render() {
-    return <RevealableText className={this.classes}>{this.props.children}</RevealableText>
   }
 }

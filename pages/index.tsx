@@ -1,14 +1,15 @@
 import * as React from "react"
-import { Jumbo } from "@component/Jumbo/Jumbo"
+import { Jumbo } from "@component/Jumbo"
 import Head from "next/head"
-import { PressPls } from "@component/PressPls/PressPls"
+import { PressPls } from "@component/PressPls"
 import anime from "animejs"
-import { Selector } from "@component/Selector/Selector"
-import { Stars } from "@component/Stars/Stars"
-import { Projects } from "@component/Page/Projects"
+import { Selector } from "@component/Selector"
+import { Stars } from "@component/Stars"
+import { Projects } from "@component/Page/Project"
 import styled from "@emotion/styled"
 import { About } from "@component/Page/About"
-import { GithubAd } from "@component/GithubAd/GithubAd"
+import { GithubAd } from "@component/GithubAd"
+import { Guestbook } from "@component/Page/Guestbook"
 
 interface State {
   stage: number
@@ -168,6 +169,8 @@ export default class Voakie extends React.Component<{}, State> {
           </ProjectWrap>
         )
       case 1:
+        return <Guestbook />
+      case 2:
         return <About back={this.backwardStage1} />
     }
   }

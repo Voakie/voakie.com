@@ -1,7 +1,7 @@
 import * as React from "react"
-import { ProjectEl, ProjectWrapper, ProjectElHeading } from "./projectsElements"
+import { ProjectEl, ProjectWrapper, ProjectElHeading } from "./elements"
 import anime from "animejs"
-import { PressPls } from "@component/PressPls/PressPls"
+import { PressPls } from "@component/PressPls"
 
 interface Props {
   back: () => void
