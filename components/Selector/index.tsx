@@ -75,7 +75,7 @@ export class Selector extends React.Component<Props, State> {
       if (e.which === 37 && this.state.selection > 0) {
         if (!this.state.allowSelection) return
         this.setState({ selection: this.state.selection - 1 })
-      } else if (e.which === 39 && this.state.selection < 2) {
+      } else if (e.which === 39 && this.state.selection < 1) {
         if (!this.state.allowSelection) return
         this.setState({ selection: this.state.selection + 1 })
       } else if (e.which === 13) {
@@ -112,22 +112,11 @@ export class Selector extends React.Component<Props, State> {
             onSelectDone={this.props.onSelectDone}
           />
           <Option
-            title="Guestbook"
-            body="Sign the guestbook"
-            selection={this.state.selection}
-            setSelection={this.setSelection}
-            number={1}
-            setArrowPos={this.setArrowPos}
-            nonce={this.state.nonce}
-            locked={this.props.stage !== 1}
-            onSelectDone={this.props.onSelectDone}
-          />
-          <Option
             title="About"
             body="How to reach me and how this site was made"
             selection={this.state.selection}
             setSelection={this.setSelection}
-            number={2}
+            number={1}
             setArrowPos={this.setArrowPos}
             nonce={this.state.nonce}
             locked={this.props.stage !== 1}
