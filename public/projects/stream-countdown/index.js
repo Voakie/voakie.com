@@ -22,10 +22,8 @@
     document.location.href = "new.html"
   }
 
-  if (theme == 2) {
-    $(".text, .time, .sub").css("color", "black")
-  } else if (theme == 3) {
-    $(".text, .time, .sub").css("color", "rgb(0, 255, 0)")
+  if (theme) {
+    $(".text, .time, .sub").css("color", theme)
   }
 
   if (image == "green") {
