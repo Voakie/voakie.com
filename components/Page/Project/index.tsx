@@ -67,7 +67,16 @@ export class Projects extends React.Component<Props> {
             url="https://voakie.com/projects/tic-tac-toe/index.html"
           />
         </ProjectWrapper>
-        <PressPls stage={2} displayOn={2} onClick={this.onPressClick.bind(this)}>
+        <PressPls
+          wrapStyle={{
+            height: "30vh",
+            backdropFilter: "blur(3px)",
+            paddingTop: "10vh",
+          }}
+          stage={2}
+          displayOn={2}
+          onClick={this.onPressClick.bind(this)}
+        >
           BACK
         </PressPls>
       </React.Fragment>

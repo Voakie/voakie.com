@@ -5,15 +5,16 @@ export const ProjectWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  bottom: 40vh;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: auto;
+  padding-bottom: 30vh;
 
   @media screen and (max-width: 820px) {
-    bottom: 20vh;
+    padding-bottom: 20vh;
   }
 `
 

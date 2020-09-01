@@ -5,13 +5,14 @@ interface Props {
   displayOn: number
   children: string
   onClick: (e: React.MouseEvent<HTMLDivElement>) => void
+  wrapStyle?: React.CSSProperties
 }
 
-export function PressPls({ stage, displayOn, children, onClick }: Props) {
+export function PressPls({ stage, displayOn, children, onClick, wrapStyle }: Props) {
   if (stage !== displayOn) return null
 
   return (
-    <Wrap>
+    <Wrap style={wrapStyle}>
       <Text onClick={onClick}>{children}</Text>
     </Wrap>
   )
