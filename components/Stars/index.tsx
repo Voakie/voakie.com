@@ -31,6 +31,7 @@ export class Stars extends React.Component<Props, State> {
 
     this.mouseMove = this.mouseMove.bind(this)
     this.orientationChange = this.orientationChange.bind(this)
+    this.onResize = this.onResize.bind(this)
   }
 
   componentDidMount() {
@@ -66,12 +67,14 @@ export class Stars extends React.Component<Props, State> {
 
     document.addEventListener("mousemove", this.mouseMove)
     window.addEventListener("deviceorientation", this.orientationChange, true)
+    window.addEventListener("resize", this.onResize)
     this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousemove", this.mouseMove)
     window.removeEventListener("deviceorientation", this.orientationChange, true)
+    window.removeEventListener("resize", this.onResize)
     this.animate = false
   }
 
@@ -83,6 +86,10 @@ export class Stars extends React.Component<Props, State> {
   orientationChange(e: DeviceOrientationEvent) {
     this.mouseX = ((e.gamma || 0) + (e.alpha || 0)) * 10
     this.mouseY = (e.beta || 0) * 10
+  }
+
+  onResize(e: UIEvent) {
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   render() {

@@ -12,10 +12,6 @@ export const ProjectWrapper = styled.div`
   flex-wrap: wrap;
   overflow: auto;
   padding-bottom: 30vh;
-
-  @media screen and (max-width: 820px) {
-    padding-bottom: 20vh;
-  }
 `
 
 export const ProjectEl = styled.div`
