@@ -12,6 +12,7 @@ export const ProjectWrapper = styled.div`
   flex-wrap: wrap;
   overflow: auto;
   padding-bottom: 30vh;
+  perspective: 1000px;
 `
 
 export const ProjectEl = styled.div`

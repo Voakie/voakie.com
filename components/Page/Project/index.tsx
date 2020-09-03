@@ -93,6 +93,7 @@ interface ProjectCardProps {
 
 export class ProjectCard extends React.Component<ProjectCardProps> {
   zIndex = getRandomInt(10, 40)
+  rotate = false
 
   constructor(props: ProjectCardProps) {
     super(props)
@@ -110,11 +111,30 @@ export class ProjectCard extends React.Component<ProjectCardProps> {
   }
 
   mouseMove(e: MouseEvent) {
+    const el = document.querySelector("." + this.props.id)
+    const bounds = el?.getBoundingClientRect()
+
+    this.rotate = bounds
+      ? e.clientX > bounds.left &&
+        e.clientX < bounds.right &&
+        e.clientY > bounds.top &&
+        e.clientY < bounds.bottom
+      : false
+
+    const rotateX = bounds ? (e.clientY - bounds.top - 100) / 6 : 0
+    const rotateY = bounds ? (e.clientX - bounds.left - 150) / 10 : 0
+    const gradientX = bounds ? ((e.clientX - bounds.left) / 300) * 200 - 50 : 0
+
     anime({
       targets: "." + this.props.id,
-      translateX: (e.clientX / window.innerWidth) * this.zIndex,
-      translateY: (e.clientY / window.innerHeight) * this.zIndex,
-      duration: 100,
+      rotateX: this.rotate ? -rotateX : 0,
+      rotateY: this.rotate ? rotateY : 0,
+      background: this.rotate
+        ? `linear-gradient(${96 + rotateX}deg, rgba(160, 160, 160, .2) ${
+            gradientX - 10
+          }%, rgba(230, 230, 230, .4) ${gradientX}%, rgba(160, 160, 160, .2) ${gradientX + 10}%)`
+        : "inherit",
+      duration: 200,
     })
   }
 

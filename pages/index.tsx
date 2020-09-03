@@ -9,6 +9,7 @@ import { Projects } from "@component/Page/Project"
 import styled from "@emotion/styled"
 import { About } from "@component/Page/About"
 import { GithubAd } from "@component/GithubAd"
+import qs from "querystring"
 
 interface State {
   stage: number
@@ -44,6 +45,23 @@ export default class Voakie extends React.Component<{}, State> {
 
   componentDidMount() {
     document.addEventListener("keypress", this.onKey)
+
+    const query = qs.parse(location.search.replace("?", ""))
+    if ("goto" in query) {
+      switch (query.goto) {
+        case "2":
+          if ("page" in query) {
+            this.forwardStage1()
+            this.forwardStage2(parseInt(query.page?.toString() || ""))
+          }
+          break
+        case "1":
+          this.forwardStage1()
+          break
+        default:
+          console.log("Unknown query string", query)
+      }
+    }
   }
 
   componentWillUnmount() {
