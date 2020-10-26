@@ -93,7 +93,6 @@ interface ProjectCardProps {
 
 export class ProjectCard extends React.Component<ProjectCardProps> {
   zIndex = getRandomInt(10, 40)
-  rotate = false
 
   constructor(props: ProjectCardProps) {
     super(props)
@@ -114,28 +113,39 @@ export class ProjectCard extends React.Component<ProjectCardProps> {
     const el = document.querySelector("." + this.props.id)
     const bounds = el?.getBoundingClientRect()
 
-    this.rotate = bounds
+    const rotate = bounds
       ? e.clientX > bounds.left &&
         e.clientX < bounds.right &&
         e.clientY > bounds.top &&
         e.clientY < bounds.bottom
       : false
 
-    const rotateX = bounds ? (e.clientY - bounds.top - 100) / 6 : 0
-    const rotateY = bounds ? (e.clientX - bounds.left - 150) / 10 : 0
+    const rotateX = bounds ? (e.clientY - bounds.top - 100) / 10 : 0
+    const rotateY = bounds ? (e.clientX - bounds.left - 150) / 14 : 0
     const gradientX = bounds ? ((e.clientX - bounds.left) / 300) * 200 - 50 : 0
 
-    anime({
-      targets: "." + this.props.id,
-      rotateX: this.rotate ? -rotateX : 0,
-      rotateY: this.rotate ? rotateY : 0,
-      background: this.rotate
-        ? `linear-gradient(${96 + rotateX}deg, rgba(160, 160, 160, .2) ${
+    if (!rotate) {
+      anime({
+        targets: "." + this.props.id,
+        rotateX: 0,
+        rotateY: 0,
+        background: `linear-gradient(0deg, rgba(160, 160, 160, .2) 0%, rgba(160, 160, 160, .2) 0%, rgba(160, 160, 160, .2) 0%)`,
+        duration: 1,
+      })
+    } else {
+      anime({
+        targets: "." + this.props.id,
+        rotateX: -rotateX,
+        rotateY: rotateY,
+        background: (() =>
+          `linear-gradient(${96 + rotateX}deg, rgba(160, 160, 160, .2) ${
             gradientX - 10
-          }%, rgba(230, 230, 230, .4) ${gradientX}%, rgba(160, 160, 160, .2) ${gradientX + 10}%)`
-        : "inherit",
-      duration: 200,
-    })
+          }%, rgba(230, 230, 230, .4) ${gradientX}%, rgba(160, 160, 160, .2) ${
+            gradientX + 10
+          }%)`)(),
+        duration: 200,
+      })
+    }
   }
 
   onClick() {
