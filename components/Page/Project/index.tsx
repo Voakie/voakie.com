@@ -122,14 +122,12 @@ export class ProjectCard extends React.Component<ProjectCardProps> {
 
     const rotateX = bounds ? (e.clientY - bounds.top - 100) / 10 : 0
     const rotateY = bounds ? (e.clientX - bounds.left - 150) / 14 : 0
-    const gradientX = bounds ? ((e.clientX - bounds.left) / 300) * 200 - 50 : 0
 
     if (!rotate) {
       anime({
         targets: "." + this.props.id,
         rotateX: 0,
         rotateY: 0,
-        background: `linear-gradient(0deg, rgba(160, 160, 160, .2) 0%, rgba(160, 160, 160, .2) 0%, rgba(160, 160, 160, .2) 0%)`,
         duration: 1,
       })
     } else {
@@ -137,12 +135,6 @@ export class ProjectCard extends React.Component<ProjectCardProps> {
         targets: "." + this.props.id,
         rotateX: -rotateX,
         rotateY: rotateY,
-        background: (() =>
-          `linear-gradient(${96 + rotateX}deg, rgba(160, 160, 160, .2) ${
-            gradientX - 10
-          }%, rgba(230, 230, 230, .4) ${gradientX}%, rgba(160, 160, 160, .2) ${
-            gradientX + 10
-          }%)`)(),
         duration: 200,
       })
     }
