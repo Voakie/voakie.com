@@ -1,7 +1,8 @@
 import * as React from "react"
 import { RevealableText } from "./elements"
+import { PropsWithChildren } from "react"
 
-interface TextRevealProps {
+interface TextRevealProps extends PropsWithChildren {
   size: "normal" | "large"
   delay: number
 }

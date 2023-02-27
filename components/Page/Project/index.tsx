@@ -1,8 +1,5 @@
 import * as React from "react"
 import { ProjectEl, ProjectWrapper, ProjectElHeading } from "./elements"
-import anime from "animejs"
-import { PressPls } from "@component/PressPls"
-
 interface Props {
   back: () => void
 }
@@ -14,7 +11,7 @@ export class Projects extends React.Component<Props> {
     this.onKey = this.onKey.bind(this)
   }
 
-  onPressClick(e: React.MouseEvent<HTMLDivElement>) {
+  onPressClick(_: React.MouseEvent<HTMLDivElement>) {
     this.props.back()
   }
 
@@ -27,7 +24,7 @@ export class Projects extends React.Component<Props> {
   }
 
   onKey(e: KeyboardEvent) {
-    if (e.which === 27) {
+    if (e.key === "Escape") {
       this.props.back()
     }
   }
@@ -67,18 +64,6 @@ export class Projects extends React.Component<Props> {
             url="https://voakie.com/projects/tic-tac-toe/index.html"
           />
         </ProjectWrapper>
-        <PressPls
-          wrapStyle={{
-            height: "30vh",
-            backdropFilter: "blur(3px)",
-            paddingTop: "10vh",
-          }}
-          stage={2}
-          displayOn={2}
-          onClick={this.onPressClick.bind(this)}
-        >
-          BACK
-        </PressPls>
       </React.Fragment>
     )
   }
@@ -97,47 +82,7 @@ export class ProjectCard extends React.Component<ProjectCardProps> {
   constructor(props: ProjectCardProps) {
     super(props)
 
-    this.mouseMove = this.mouseMove.bind(this)
     this.onClick = this.onClick.bind(this)
-  }
-
-  componentDidMount() {
-    document.addEventListener("mousemove", this.mouseMove)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("mousemove", this.mouseMove)
-  }
-
-  mouseMove(e: MouseEvent) {
-    const el = document.querySelector("." + this.props.id)
-    const bounds = el?.getBoundingClientRect()
-
-    const rotate = bounds
-      ? e.clientX > bounds.left &&
-        e.clientX < bounds.right &&
-        e.clientY > bounds.top &&
-        e.clientY < bounds.bottom
-      : false
-
-    const rotateX = bounds ? (e.clientY - bounds.top - 100) / 10 : 0
-    const rotateY = bounds ? (e.clientX - bounds.left - 150) / 14 : 0
-
-    if (!rotate) {
-      anime({
-        targets: "." + this.props.id,
-        rotateX: 0,
-        rotateY: 0,
-        duration: 1,
-      })
-    } else {
-      anime({
-        targets: "." + this.props.id,
-        rotateX: -rotateX,
-        rotateY: rotateY,
-        duration: 200,
-      })
-    }
   }
 
   onClick() {

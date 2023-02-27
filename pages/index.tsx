@@ -10,6 +10,8 @@ import styled from "@emotion/styled"
 import { About } from "@component/Page/About"
 import { GithubAd } from "@component/GithubAd"
 import qs from "querystring"
+import { Header } from "@component/Header/elements"
+import { GlobalBackButton } from "@component/GlobalBackButton"
 
 interface State {
   stage: number
@@ -206,7 +208,10 @@ export default class Voakie extends React.Component<{}, State> {
           ></link>
         </Head>
 
-        <GithubAd />
+        <Header>
+          <GlobalBackButton show={this.state.stage === 2} onClick={this.backwardStage1} delay={2000} />
+          <GithubAd />
+        </Header>
         <Stars showStars={this.state.stage === 2 && this.state.selectedPage === 0} />
         <Jumbo />
         <PressPls stage={this.state.stage} displayOn={0} onClick={this.forwardStage1}>

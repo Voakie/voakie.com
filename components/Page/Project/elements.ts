@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 
 export const ProjectWrapper = styled.div`
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -18,27 +18,26 @@ export const ProjectWrapper = styled.div`
 export const ProjectEl = styled.div`
   height: 150px;
   width: 300px;
-  background: rgba(200, 200, 200, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   margin: 50px;
   backdrop-filter: blur(2px);
   font-family: "Montserrat";
-  transition: color 0.2s, background 0.2s;
-  padding: 10px;
-  outline: 0px solid black;
+  transition: color 0.2s, background 0.2s, border 0.2s;
+  padding: 20px;
+  outline: 0 solid black;
   cursor: pointer;
+  border: 1px solid #eee;
+  border-radius: 10px;
 
   .dark & {
     color: #949494;
   }
 
   &:hover {
-    animation: optionanim 0.2s;
-    background: rgba(200, 200, 200, 0.4);
-  }
-
-  &:hover span {
-    color: #2b2bce;
-    text-decoration: underline;
+    animation: projectCardOutline 0.2s;
+    background: rgba(255, 255, 255, 0.4);
+    outline: 1px solid black;
+    border: 1px solid white;
   }
 
   &:hover svg {
@@ -47,6 +46,19 @@ export const ProjectEl = styled.div`
 
   @media screen and (max-width: 820px) {
     transform: unset !important;
+  }
+
+  @keyframes projectCardOutline {
+    0% {
+      outline-offset: 30px;
+      outline-color: white;
+      outline-width: 1px;
+    }
+    100% {
+      outline-offset: 0;
+      outline-color: black;
+      outline-width: 1px;
+    }
   }
 `
 

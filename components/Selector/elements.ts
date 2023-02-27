@@ -17,7 +17,7 @@ export const OptionWrapper = styled.div`
   min-height: 150px;
   border: 1px solid #313131;
   border-radius: 5px;
-  outline: 0px solid white;
+  outline: 0 solid white;
   padding: 10px;
   margin: 10px;
   font-family: "Montserrat";
@@ -43,18 +43,18 @@ export const OptionWrapper = styled.div`
     }
     60% {
       outline-offset: 0;
-      outline-color: white;
+      outline-color: black;
       outline-width: 1px;
     }
     65% {
       outline-offset: 0;
-      outline-color: white;
-      outline-width: 0px;
+      outline-color: black;
+      outline-width: 1px;
     }
     100% {
       outline-offset: 0;
       outline-color: black;
-      outline-width: 0px;
+      outline-width: 1px;
     }
   }
 

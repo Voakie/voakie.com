@@ -1,9 +1,6 @@
 import styled from "@emotion/styled"
 
 export const Container = styled.div`
-  position: fixed;
-  right: 20px;
-  top: 20px;
   height: 50px;
   width: 50px;
   transition: fill 0.3s;

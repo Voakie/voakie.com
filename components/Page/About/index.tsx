@@ -1,6 +1,5 @@
 import * as React from "react"
 import { AboutWrap } from "./elements"
-import { PressPls } from "@component/PressPls"
 import { TextReveal } from "@component/Reveal/Text"
 import { ImageReveal } from "@component/Reveal/Image"
 
@@ -8,43 +7,28 @@ interface AboutProps {
   back: () => void
 }
 
-interface AboutState {
-  displayPressPls: boolean
-}
-
-export class About extends React.Component<AboutProps, AboutState> {
-  timeout?: number
-
+export class About extends React.Component<AboutProps> {
   constructor(props: AboutProps) {
     super(props)
-
-    this.state = {
-      displayPressPls: false,
-    }
 
     this.onKey = this.onKey.bind(this)
     this.onPressClick = this.onPressClick.bind(this)
   }
 
-  onPressClick(e: React.MouseEvent<HTMLDivElement>) {
+  onPressClick(_: React.MouseEvent<HTMLDivElement>) {
     this.props.back()
   }
 
   componentDidMount() {
     document.addEventListener("keydown", this.onKey)
-
-    this.timeout = window.setTimeout(() => {
-      this.setState({ displayPressPls: true })
-    }, 2000)
   }
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.onKey)
-    clearTimeout(this.timeout)
   }
 
   onKey(e: KeyboardEvent) {
-    if (e.which === 27) {
+    if (e.key === "Escape") {
       this.props.back()
     }
   }
@@ -101,12 +85,6 @@ export class About extends React.Component<AboutProps, AboutState> {
             </svg>
           </TextReveal>
         </AboutWrap>
-
-        {this.state.displayPressPls ? (
-          <PressPls stage={2} displayOn={2} onClick={this.onPressClick}>
-            BACK
-          </PressPls>
-        ) : null}
       </React.Fragment>
     )
   }

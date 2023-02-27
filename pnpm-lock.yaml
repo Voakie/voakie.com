@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@emotion/core': ^10.0.28
   '@emotion/styled': ^10.0.27
+  '@heroicons/react': ^2.0.16
   '@types/animejs': ^3.1.7
   '@types/node': ^18.14.2
   '@types/react': ^18.0.28
@@ -16,6 +17,7 @@ specifiers:
 dependencies:
   '@emotion/core': 10.3.1_react@18.2.0
   '@emotion/styled': 10.3.0_53jusob2jhmevmsrhkvbpx2hvm
+  '@heroicons/react': 2.0.16_react@18.2.0
   animejs: 3.2.1
   next: 13.2.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -178,6 +180,14 @@ packages:
 
   /@emotion/weak-memoize/0.2.5:
     resolution: {integrity: sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==}
+    dev: false
+
+  /@heroicons/react/2.0.16_react@18.2.0:
+    resolution: {integrity: sha512-x89rFxH3SRdYaA+JCXwfe+RkE1SFTo9GcOkZettHer71Y3T7V+ogKmfw5CjTazgS3d0ClJ7p1NA+SP7VQLQcLw==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@next/env/13.2.1:
