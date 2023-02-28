@@ -3,13 +3,14 @@ export class Star {
   posY: number
   zIndex: number
 
-  constructor(maxX: number, maxY: number) {
-    this.posX = getRandomInt(0, maxX)
-    this.posY = getRandomInt(0, maxY)
+  constructor(minX: number, minY: number, maxX: number, maxY: number) {
+    this.posX = getRandomInt(minX, maxX)
+    this.posY = getRandomInt(minY, maxY)
     this.zIndex = getRandomInt(0, 10)
   }
 
   pos(mouseX: number, mouseY: number) {
+    this.posY += -0.005 * (this.zIndex + 5)
     const x = this.posX * (window.innerWidth / 400)
     const y = this.posY * (window.innerHeight / 400)
 

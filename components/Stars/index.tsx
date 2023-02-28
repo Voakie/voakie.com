@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Canvas } from "./elements"
-import { EventEmitter } from "events"
 import { Star } from "./Star"
 import anime from "animejs"
 
@@ -15,7 +14,6 @@ interface State {
 }
 
 export class Stars extends React.Component<Props, State> {
-  coms = new EventEmitter()
   mouseX = 0
   mouseY = 0
   animate = true
@@ -45,7 +43,7 @@ export class Stars extends React.Component<Props, State> {
     })
 
     for (let i = 0; i < 200; i++) {
-      stars[i] = new Star(400, 400)
+      stars[i] = new Star(0, 0, 400, 400)
     }
 
     if (ctx) {
@@ -55,8 +53,16 @@ export class Stars extends React.Component<Props, State> {
         ctx.strokeStyle = "black"
 
         for (const star of stars) {
-          const pos = star.pos(this.mouseX, this.mouseY)
-          if (this.props.showStars) ctx.fillRect(pos.posX, pos.posY, 2, 2)
+          if (this.props.showStars) {
+            const pos = star.pos(this.mouseX, this.mouseY)
+            if (pos.posY < -5) {
+              stars[stars.indexOf(star)] = new Star(0, 405, 400, 410)
+            } else {
+              ctx.fillStyle = `rgba(0, 0, 0, ${star.zIndex / 10})`
+              ctx.strokeStyle = `rgba(0, 0, 0, ${star.zIndex / 10})`
+              ctx.fillRect(pos.posX, pos.posY, 2, 2)
+            }
+          }
         }
 
         if (this.animate) requestAnimationFrame(draw)
@@ -88,7 +94,7 @@ export class Stars extends React.Component<Props, State> {
     this.mouseY = (e.beta || 0) * 10
   }
 
-  onResize(e: UIEvent) {
+  onResize(_: UIEvent) {
     this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
