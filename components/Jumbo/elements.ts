@@ -1,7 +1,8 @@
 import styled from "@emotion/styled"
+import { overpass } from "../../pages"
 
 export const JumboEl = styled.div`
-  font-family: "Overpass",sans-serif;
+  font-family: ${overpass.style.fontFamily}, sans-serif;
   position: fixed;
   top: 20vh;
   left: 0;

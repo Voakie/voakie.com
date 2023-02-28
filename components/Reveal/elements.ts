@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { montserrat } from "../../pages"
 
 export const RevealableImage = styled.div`
   width: 300px;
@@ -42,7 +43,7 @@ export const RevealableImage = styled.div`
 export const RevealableText = styled.div`
   margin: 5px;
   padding: 5px;
-  font-family: "Montserrat";
+  font-family: ${montserrat.style.fontFamily}, sans-serif;
   transition: clip-path 0.8s;
   clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%);
   background: black;

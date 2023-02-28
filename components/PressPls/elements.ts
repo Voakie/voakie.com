@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { montserrat } from "../../pages"
 
 export const Wrap = styled.div`
   position: fixed;
@@ -16,7 +17,7 @@ export const Wrap = styled.div`
 `
 
 export const Text = styled.div`
-  font-family: "Montserrat",sans-serif;
+  font-family: ${montserrat.style.fontFamily}, sans-serif;
   font-weight: 500;
   font-size: 20px;
   outline: 1px solid black;

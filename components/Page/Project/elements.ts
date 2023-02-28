@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { montserrat } from "../../../pages"
 
 export const ProjectWrapper = styled.div`
   position: fixed;
@@ -20,7 +21,7 @@ export const ProjectEl = styled.div`
   background: rgba(255, 255, 255, 0.2);
   margin: 50px;
   backdrop-filter: blur(2px);
-  font-family: "Montserrat",sans-serif;
+  font-family: ${montserrat.style.fontFamily}, sans-serif;
   transition: color 0.2s, background 0.2s, border 0.2s;
   padding: 20px;
   outline: 0 solid black;

@@ -12,6 +12,13 @@ import { GithubAd } from "@component/GithubAd"
 import qs from "querystring"
 import { Header } from "@component/Header/elements"
 import { GlobalBackButton } from "@component/GlobalBackButton"
+import { Montserrat, Overpass } from "next/font/google"
+
+export const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
+export const overpass = Overpass({ subsets: ["latin"], weight: ["600"] })
 
 interface State {
   stage: number
@@ -198,14 +205,6 @@ export default class Voakie extends React.Component<{}, State> {
         <Head>
           <title>Voakie.com</title>
           <meta charSet="utf8" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap"
-            rel="stylesheet"
-          ></link>
         </Head>
 
         <Header>

@@ -1,8 +1,9 @@
 import styled from "@emotion/styled"
 import { ArrowLeftIcon } from "@heroicons/react/20/solid"
+import { montserrat } from "../../pages"
 
 export const Button = styled.button`
-  font-family: "Montserrat";
+  font-family: ${montserrat.style.fontFamily}, sans-serif;
   font-weight: 500;
   font-size: 20px;
   border: 1px solid #eee;

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { montserrat } from "../../pages"
 
 export const SelectionWrapper = styled.div`
   position: fixed;
@@ -20,7 +21,7 @@ export const OptionWrapper = styled.div`
   border-radius: 10px;
   outline: 0 solid white;
   margin: 10px;
-  font-family: "Montserrat",sans-serif;
+  font-family: ${montserrat.style.fontFamily}, sans-serif;
   transition: color 0.3s, padding-top 0.3s, border-color 0.3s, background-color 0.3s;
   padding: 20px;
   cursor: pointer;
