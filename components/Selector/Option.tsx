@@ -8,11 +8,10 @@ interface Props {
 }
 
 export class Option extends React.Component<Props> {
-
   render() {
     return (
-      <OptionWrapper>
-        <div className="optioncontent" onClick={this.props.onClick}>
+      <OptionWrapper onClick={this.props.onClick}>
+        <div className="optioncontent">
           <OptionHeading>{this.props.title}</OptionHeading>
           {this.props.body}
         </div>
