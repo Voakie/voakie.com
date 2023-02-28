@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 
 export const ProjectWrapper = styled.div`
   position: fixed;
-  top: 80px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -11,8 +11,7 @@ export const ProjectWrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
   overflow: auto;
-  padding-bottom: 30vh;
-  perspective: 1000px;
+  padding-top: 80px;
 `
 
 export const ProjectEl = styled.div`
@@ -21,7 +20,7 @@ export const ProjectEl = styled.div`
   background: rgba(255, 255, 255, 0.2);
   margin: 50px;
   backdrop-filter: blur(2px);
-  font-family: "Montserrat";
+  font-family: "Montserrat",sans-serif;
   transition: color 0.2s, background 0.2s, border 0.2s;
   padding: 20px;
   outline: 0 solid black;

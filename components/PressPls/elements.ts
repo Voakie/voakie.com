@@ -16,21 +16,23 @@ export const Wrap = styled.div`
 `
 
 export const Text = styled.div`
-  font-family: "Montserrat";
+  font-family: "Montserrat",sans-serif;
   font-weight: 500;
   font-size: 20px;
   outline: 1px solid black;
   -moz-outline-radius: 10px;
-  padding: 10px;
-  animation: enteranim 2s infinite;
+  padding: 20px;
+  animation: pressPleaseOutline 2s infinite;
   cursor: pointer;
   background: white;
+  border-radius: 10px;
+  transition: background .2s, outline-color;
 
   &:hover {
     background: rgb(239 239 239);
   }
 
-  @keyframes enteranim {
+  @keyframes pressPleaseOutline {
     0% {
       outline-offset: 100px;
       outline-color: transparent;
@@ -53,6 +55,20 @@ export const Text = styled.div`
     100% {
       outline-offset: 0;
       outline-color: white;
+    }
+  }
+
+  @keyframes hoverOutline {
+    0% {
+      outline-offset: 30px;
+      outline-color: black;
+      outline-width: 1px;
+    }
+    100% {
+      outline-offset: 0;
+      outline-color: #949494;
+      outline-width: 1px;
+      border: 1px solid black;
     }
   }
 `

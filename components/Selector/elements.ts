@@ -9,52 +9,47 @@ export const SelectionWrapper = styled.div`
   justify-content: space-around;
   max-width: 1500px;
   margin: auto;
-  transform: translateY(400px);
+  transform: translateY(200%);
+  flex-wrap: wrap;
 `
 
 export const OptionWrapper = styled.div`
   width: 300px;
   min-height: 150px;
   border: 1px solid #313131;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: 0 solid white;
-  padding: 10px;
   margin: 10px;
-  font-family: "Montserrat";
-  transition: color 0.3s, padding-top 0.3s, border-color 0.3s;
-  padding-top: 20px;
+  font-family: "Montserrat",sans-serif;
+  transition: color 0.3s, padding-top 0.3s, border-color 0.3s, background-color 0.3s;
+  padding: 20px;
   cursor: pointer;
 
   .dark & {
     color: #949494;
   }
 
-  &.active {
-    padding-top: 10px;
+  &:hover {
     border-color: #949494;
-    animation: optionanim 0.2s;
+    animation: selectorOptionOutline 0.2s;
+    background: none;
+  }
+  
+  .dark &:hover {
+    background-color: #262626;
   }
 
-  @keyframes optionanim {
+  @keyframes selectorOptionOutline {
     0% {
-      outline-offset: 50px;
-      outline-color: black;
-      outline-width: 1px;
-    }
-    60% {
-      outline-offset: 0;
-      outline-color: black;
-      outline-width: 1px;
-    }
-    65% {
-      outline-offset: 0;
+      outline-offset: 30px;
       outline-color: black;
       outline-width: 1px;
     }
     100% {
       outline-offset: 0;
-      outline-color: black;
+      outline-color: #949494;
       outline-width: 1px;
+      border: 1px solid black;
     }
   }
 

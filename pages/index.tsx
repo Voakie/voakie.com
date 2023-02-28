@@ -71,7 +71,7 @@ export default class Voakie extends React.Component<{}, State> {
   }
 
   onKey(e: KeyboardEvent) {
-    if (this.state.stage === 0 && e.which === 13) {
+    if (this.state.stage === 0 && e.key === "Enter") {
       this.forwardStage1()
     }
   }
@@ -215,7 +215,7 @@ export default class Voakie extends React.Component<{}, State> {
         <Stars showStars={this.state.stage === 2 && this.state.selectedPage === 0} />
         <Jumbo />
         <PressPls stage={this.state.stage} displayOn={0} onClick={this.forwardStage1}>
-          PRESS ENTER
+          ENTER
         </PressPls>
         <Selector stage={this.state.stage} onSelectDone={this.forwardStage2} />
 
