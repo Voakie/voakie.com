@@ -34,22 +34,28 @@ export class Projects extends React.Component<Props> {
       <React.Fragment>
         <ProjectWrapper>
           <ProjectCard
-            id="p1"
-            title="WidgetBot"
-            body="Free Discord Widgets to embed in your website"
-            url="https://widgetbot.io/"
+            id="p7"
+            title="Block-Match"
+            body="block-match is a simple single-player browser game that challenges the players rotational skills"
+            url="https://block-match.vercel.app"
           />
           <ProjectCard
-            id="p2"
-            title="Vindows"
-            body="Very simple desktop interface created with React"
-            url="https://voakie.com/projects/vindows/index.html"
+            id="p5"
+            title="ebcdic-ascii"
+            body="Node.js module for converting between EBCDIC and ASCII"
+            url="https://github.com/Voakie/ebcdic-ascii"
           />
           <ProjectCard
-            id="p3"
-            title="Streamcounter"
-            body="Display statistics about your stream, in your stream. Made by @xxdocobxx"
-            url="https://streamcounter.speechchat.com/"
+            id="p6"
+            title="Headbang"
+            body="This app measures the headbangs of the user using the gyroscope in the connected eSense earable"
+            url="https://github.com/Voakie/headbang"
+          />
+          <ProjectCard
+            id="p6"
+            title="Voakie.com"
+            body="The source code for this website"
+            url="https://github.com/Voakie/voakie.com"
           />
           <ProjectCard
             id="p4"
@@ -58,10 +64,16 @@ export class Projects extends React.Component<Props> {
             url="https://voakie.com/projects/stream-countdown/new.html"
           />
           <ProjectCard
-            id="p5"
-            title="Tic-Tac-Toe"
-            body="Not sure why this is here"
-            url="https://voakie.com/projects/tic-tac-toe/index.html"
+            id="p1"
+            title="WidgetBot"
+            body="Free Discord Widgets to embed in your website"
+            url="https://widgetbot.io/"
+          />
+          <ProjectCard
+            id="p2"
+            title="Vindows"
+            body="First attempts at a simple desktop interface created with React"
+            url="https://voakie.com/projects/vindows/index.html"
           />
         </ProjectWrapper>
       </React.Fragment>

@@ -16,7 +16,7 @@ export const ProjectWrapper = styled.div`
 `
 
 export const ProjectEl = styled.div`
-  height: 150px;
+  min-height: 150px;
   width: 300px;
   background: rgba(255, 255, 255, 0.2);
   margin: 50px;
