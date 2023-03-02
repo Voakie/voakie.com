@@ -122,23 +122,9 @@ export default class Voakie extends React.Component<{}, State> {
       easing: "cubicBezier(0.670, 0.200, 0.395, 1.035)",
     })
 
-    anime({
-      targets: "canvas",
-      translateY: "100vh",
-      duration: 150,
-      easing: "linear",
-    })
-
     document.querySelector("body")?.classList.remove("dark")
 
     setTimeout(() => {
-      anime({
-        targets: "canvas",
-        translateY: ["100vh", "0vh"],
-        duration: 1500,
-        easing: "cubicBezier(0.670, 0.200, 0.395, 1.035)",
-      })
-
       anime({
         targets: [".pwrap"],
         translateY: ["100vh", "0vh"],
@@ -172,13 +158,6 @@ export default class Voakie extends React.Component<{}, State> {
 
     document.querySelector("body")?.classList.add("dark")
 
-    anime({
-      targets: "canvas",
-      translateY: 0,
-      duration: 1500,
-      easing: "cubicBezier(0.670, 0.200, 0.395, 1.035)",
-    })
-
     setTimeout(() => {
       this.setState({ transitioning: false })
     }, 1000)
@@ -208,7 +187,11 @@ export default class Voakie extends React.Component<{}, State> {
         </Head>
 
         <Header>
-          <GlobalBackButton show={this.state.stage === 2} onClick={this.backwardStage1} delay={2000} />
+          <GlobalBackButton
+            show={this.state.stage === 2}
+            onClick={this.backwardStage1}
+            delay={2000}
+          />
           <GithubAd />
         </Header>
         <Stars showStars={this.state.stage === 2 && this.state.selectedPage === 0} />

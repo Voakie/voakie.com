@@ -8,4 +8,10 @@ export const Canvas = styled.canvas`
   top: 0;
   z-index: -10;
   pointer-events: none;
+  opacity: 100%;
+  transition: opacity 2s;
+
+  &.hidden {
+    opacity: 0;
+  }
 `

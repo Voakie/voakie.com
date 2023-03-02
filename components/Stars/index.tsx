@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Canvas } from "./elements"
 import { Star } from "./Star"
-import anime from "animejs"
 
 interface Props {
   showStars: boolean
@@ -37,12 +36,7 @@ export class Stars extends React.Component<Props, State> {
     const ctx = canvas?.getContext("2d")
     const stars: Star[] = []
 
-    anime({
-      targets: "canvas",
-      translateY: window.innerHeight,
-    })
-
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < window.innerWidth / 4; i++) {
       stars[i] = new Star(0, 0, 400, 400)
     }
 
@@ -54,7 +48,7 @@ export class Stars extends React.Component<Props, State> {
 
         for (const star of stars) {
           if (this.props.showStars) {
-            const pos = star.pos(this.mouseX, this.mouseY)
+            const pos = star.pos()
             if (pos.posY < -5) {
               stars[stars.indexOf(star)] = new Star(0, 405, 400, 410)
             } else {
@@ -99,6 +93,13 @@ export class Stars extends React.Component<Props, State> {
   }
 
   render() {
-    return <Canvas id="stars" width={this.state.width} height={this.state.height} />
+    return (
+      <Canvas
+        className={this.props.showStars ? "" : "hidden"}
+        id="stars"
+        width={this.state.width}
+        height={this.state.height}
+      />
+    )
   }
 }
